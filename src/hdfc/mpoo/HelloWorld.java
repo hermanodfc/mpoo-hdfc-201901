@@ -1,7 +1,12 @@
 package hdfc.mpoo;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 public class HelloWorld {
 
+	private static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("hh:mm:ss");
+	
 	private String nome;
 	
 	public void setNome(String nome) {
@@ -12,8 +17,9 @@ public class HelloWorld {
 		return nome;
 	}
 	
-	private void imprimir() {
-		System.out.println("Olá" + this.getNome() + ". Você acabou de fazer seu primeiro Hello World em Java. Parabéns.");
+	public void imprimir() {
+		System.out.println(LocalTime.now().format(FORMATTER) + " - Olá " + this.getNome() + 
+				". Você acabou de fazer seu primeiro Hello World em Java. Parabéns.");
 
 	}
 	
